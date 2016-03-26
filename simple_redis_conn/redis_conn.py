@@ -16,7 +16,7 @@ if RC_DB_TYPE == "strict":
 elif RC_DB_TYPE == "url":
     REDIS_READ_URL = os.getenv("REDIS_READ_URL", "redis://localhost")
     REDIS_WRITE_URL = os.getenv("REDIS_WRITE_URL", "redis://localhost")
-    r = redis.from_url(REDIS_URL)
-    w = redis.from_url(REDIS_URL)
+    r = redis.from_url(REDIS_READ_URL)
+    w = redis.from_url(REDIS_WRITE_URL)
 else:
     raise
